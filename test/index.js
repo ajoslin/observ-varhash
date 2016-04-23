@@ -8,6 +8,11 @@ test('ObservVarhash is a function', function (t) {
   t.end()
 })
 
+test('_type is observ-varhash', function (t) {
+  t.equal(ObservVarhash()._type, 'observ-varhash')
+  t.end()
+})
+
 test('ObservVarhash contains correct initial value', function (t) {
   var obj = ObservVarhash({foo: 'foo', bar: 'bar'}, function (obj, key) {
     return Observ(obj)

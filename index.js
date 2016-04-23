@@ -14,6 +14,7 @@ function ObservVarhash (hash, createValue) {
 
   var obs = Observ(initialState)
   setNonEnumerable(obs, '_removeListeners', {})
+  setNonEnumerable(obs, '_type', 'observ-varhash')
 
   setNonEnumerable(obs, 'get', get.bind(obs))
   setNonEnumerable(obs, 'put', put.bind(obs))
@@ -164,7 +165,8 @@ var blacklist = {
   put: 'put is a reserved key of observ-varhash method',
   'delete': 'delete is a reserved key of observ-varhash method',
   _diff: '_diff is a reserved key of observ-varhash method',
-  _removeListeners: '_removeListeners is a reserved key of observ-varhash'
+  _removeListeners: '_removeListeners is a reserved key of observ-varhash',
+  _type: '_type is a reserved key of observ-varhash'
 }
 
 function checkKey (key) {
